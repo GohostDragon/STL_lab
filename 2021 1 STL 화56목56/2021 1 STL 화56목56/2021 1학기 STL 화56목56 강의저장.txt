@@ -6706,3 +6706,102 @@ int main()
 
 	save("소스.cpp");
 }
+
+===============================================
+저장시간 : 2021-03-25 오후 1:54:00 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 23일 화요일				(4주 1일)
+//
+// 앞으로 사용할 관찰용 class(자원을 확보하는) 만들어 두기
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [문제] "소스.cpp"에 있는 단어를 모두 저장한 후
+// 오름차순으로 정렬하여 출력하라.
+
+int main()
+{
+	ifstream in{ "소스.cpp" };
+	vector<string> v{ istream_iterator<string>{ in }, {} };
+	sort(v.begin(), v.end());
+	copy(v.begin(), v.end(), ostream_iterator<string>(cout, "\t"));
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 1:59:58 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<int> v{ 1,2,3 };
+
+	for (vector<int>::iterator i = v.begin(); i != v.end(); i++)
+		cout << *i << endl;
+	cout << sizeof(v) << endl;
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 2:06:44 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	vector<vector <int> > v{ {1,2,3}, {4,5,6,7,8}, {100,200,300} };
+
+	for (auto i = v.begin(); i != v.end(); ++i) {
+		auto t = *i;
+		for (auto ti = t.begin(); ti != t.end(); ++ti)
+			cout << *ti << " ";
+		cout << endl;
+	}
+	save("소스.cpp");
+}
