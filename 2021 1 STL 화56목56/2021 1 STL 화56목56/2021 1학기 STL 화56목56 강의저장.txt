@@ -6805,3 +6805,744 @@ int main()
 	}
 	save("소스.cpp");
 }
+
+===============================================
+저장시간 : 2021-03-25 오후 2:20:40 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] array의 특성을 살펴본다.
+int main()
+{
+	array<int, 10> a{ 1,2,3,4,5 };
+	cout << a[0] << endl;
+	cout << a[10] << endl;
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 2:35:58 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] array의 특성을 살펴본다.
+int main()
+{
+	array<int, 10> a{ 1,2,3,4,5 };
+
+	try {
+		cout << a.at(10) << endl;
+	}
+	catch (exception& e) {
+		cout << e.what() << endl;
+	}
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 2:40:14 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] array의 특성을 살펴본다.
+int main()
+{
+	array<int, 10> a{ 1,2,3,4,5 };
+
+	array<int, 10> b;
+
+	a = b;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 2:41:35 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <array>
+#include <string>
+#include <iterator>
+#include <algorithm>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] array의 특성을 살펴본다.
+int main()
+{
+	array<int, 10> a;
+	array<int, 100> b;
+
+	cout << sizeof(a) << endl;
+	cout << sizeof(b) << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 2:53:39 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+};
+
+int main()
+{
+	Array<int, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+
+	//for (auto i = a.begin(); i != a.end(); ++i)
+	//	cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:00:05 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+};
+
+int main()
+{
+	Array<int, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	//for (auto i = a.begin(); i != a.end(); ++i)
+	//	cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:00:48 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+};
+
+int main()
+{
+	Array<int, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	//for (auto i = a.begin(); i != a.end(); ++i)
+	//	cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:02:58 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+
+	T* begin() {
+		return data;
+	}
+
+	T* end() {
+		return data + N;
+	}
+};
+
+int main()
+{
+	Array<int, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	
+	for (auto i = a.begin(); i != a.end(); ++i)
+		cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:08:14 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+
+	T* begin() {
+		return data;
+	}
+
+	T* end() {
+		return data + N;
+	}
+};
+
+int main()
+{
+	Array<int, 3> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	
+	cout << "반복자로 출력" << endl;
+
+	for (auto i = a.begin(); i != a.end(); ++i)
+		cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:08:42 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+
+	T* begin() {
+		return data;
+	}
+
+	T* end() {
+		return data + N;
+	}
+};
+
+int main()
+{
+	Array<String, 3> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	
+	cout << "반복자로 출력" << endl;
+
+	for (auto i = a.begin(); i != a.end(); ++i)
+		cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:09:19 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+
+	T* begin() {
+		return data;
+	}
+
+	T* end() {
+		return data + N;
+	}
+};
+
+int main()
+{
+	Array<String, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	
+	cout << "반복자로 출력" << endl;
+
+	for (auto i = a.begin(); i != a.end(); ++i)
+		cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:17:04 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+
+	T* begin() {
+		return data;
+	}
+
+	T* end() {
+		return data + N;
+	}
+};
+
+int main()
+{
+	Array<String, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	
+	cout << "반복자로 출력" << endl;
+
+	for (auto i = a.begin(); i != a.end(); ++i)
+		cout << *i << endl;
+
+	save("소스.cpp");
+}
+
+===============================================
+저장시간 : 2021-03-25 오후 3:18:22 목요일
+===============================================
+//----------------------------------------------------------------------------------
+// 앞으로 x86 release mode 에서 프로그램한다..
+//
+// 2021. 1학기 STL 화56 목56 - 3월 25일 목요일				(4주 2일)
+//
+// 컨테이너는 다른 객체를 저장하는 객체이다.
+// Sequence Containers
+//			- array
+//			- vector
+//			- deque
+//			- forward_list
+//			- list
+//----------------------------------------------------------------------------------
+
+#include <iostream>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+// [실습] main이 실행될 수 있게 Array를 프로그램하라
+
+template <typename T, int N>
+class Array {
+	T data[N]{ 0 };
+public:
+	Array() {
+	}
+
+	size_t size() const {
+		return N;
+	}
+
+	T operator[](int idx) const {
+		return data[idx];
+	}
+
+	T& operator[](int idx) {
+		return data[idx];
+	}
+
+	T* begin() {
+		return data;
+	}
+
+	T* end() {
+		return data + N;
+	}
+};
+
+int main()
+{
+	Array<String, 10> a;
+	
+	for (int i = 0; i < a.size(); ++i)
+		a[i] = i * i;
+
+	for (int i = 0; i < a.size(); ++i)
+		cout << a[i] << endl;
+	
+	cout << "반복자로 출력" << endl;
+
+	for (auto i = a.begin(); i != a.end(); ++i)
+		cout << *i << endl;
+
+	save("소스.cpp");
+}
